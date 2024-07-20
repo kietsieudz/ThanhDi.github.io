@@ -8,7 +8,7 @@
 }
 
 body {
-    background-color: #ffcc00;
+    background-color: #ffcc00; /* Default background color */
     /* background-image: url(/images/bg.jpg); */
     background-size: cover;
     padding: 20px;
@@ -96,7 +96,7 @@ body {
 }
 
 .dodgerblue {
-    background:  rgb(0, 211, 248);
+    background: rgb(0, 211, 248);
 }
 
 .green {
@@ -104,7 +104,7 @@ body {
 }
 
 .lightpink {
-    background:  rgb(0, 211, 248);
+    background: rgb(0, 211, 248);
 }
 
 .v-text {
@@ -163,9 +163,10 @@ footer {
         transform: translateX(80px);
     }
 }
+
 @media screen and (max-width: 768px) {
     body {
         background-image: url('/images/bg2.jpg');
-        /* Các thuộc tính khác */
+        background-color: #ffcc00; /* Ensure background color is still applied */
     }
 }
