@@ -29,8 +29,8 @@
         <img class="display-img" src="images/avt.jpg" alt="Ảnh đại diện">
         <h1 style="color: #fff"> <img src="images/nro.png" width="18" height="18" alt="Verified"> Ngọc Rồng NThev <img src="images/nro.png" width="18" height="18" alt="Verified">
         </h1>
-          <h2 style="color: #fff">Server Open Chính Thức - Miễn Phí Kích Hoạt Tài Khoản
-        </h2>
+          <h4 style="color: #fff">Server Open Chính Thức Ngày <span id="date"></span> Miễn Phí Kích Hoạt Tài Khoản
+        </h4>
     </div>
     <br>
     <!-- liên kết tcn -->
@@ -78,6 +78,20 @@
     <footer>
         
     </footer>
+    <script>
+        // Function to get the current date minus 2 days in dd/mm/yyyy format
+        function getDateMinusTwoDays() {
+            const today = new Date();
+            today.setDate(today.getDate() - 2);
+            const day = String(today.getDate()).padStart(2, '0');
+            const month = String(today.getMonth() + 1).padStart(2, '0'); // January is 0!
+            const year = today.getFullYear();
+            return `${day}/${month}/${year}`;
+        }
+
+        // Insert the date into the span with id "date"
+        document.getElementById('date').textContent = getDateMinusTwoDays();
+    </script>
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@9"></script>
     <script src="assets/js/snowfall.js"></script>
