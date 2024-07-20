@@ -72,8 +72,8 @@
       <div class="link"><br>
         <h4 class="title-text">Địa chỉ IP Server</h4>
         <p class="small-text">Nhấn vào nút để sao chép IP</p>
-        <a href="#" onclick="copyToClipboard('14.225.203.19')">IP Android</a>
-        <a href="#" onclick="copyToClipboard('14.225.203.19')">IP PC/Windows</a>
+        <a href="#" onclick="copyToClipboard('NgocRongNThev:14.225.203.19:14445:0,0,0|231')">IP Android</a>
+        <a href="#" onclick="copyToClipboard('NgocRongNThev:14.225.203.19:14445:0,0,0')">IP PC/Windows</a>
     </div>
     
     <div class="link"><br>
@@ -115,7 +115,7 @@
         document.getElementById('date').textContent = getDateMinusTwoDays();
         function copyToClipboard(text) {
             navigator.clipboard.writeText(text).then(() => {
-                alert('IP đã được sao chép: ' + text);
+                alert('Sao chép thành công IP (hãy dán vào ô nhập IP): ' + text);
             }).catch(err => {
                 console.error('Có lỗi khi sao chép IP: ', err);
             });
