@@ -18,15 +18,15 @@
             color: #000;
         }
         .link a {
-            color: white; /* Text color for links */
-            background-color: #924c31; /* Initial background color */
+            color: white; 
+            background-color: #924c31;
             padding: 1px;
             border-radius: 8px;
-            text-decoration: none; /* Remove underline */
-            transition: background-color 0.3s ease; /* Smooth transition for hover effect */
+            text-decoration: none; 
+            transition: background-color 0.3s ease; 
         }
         .link a:hover {
-            background-color: #a65f4a; /* Lighter background color on hover */
+            background-color: #a65f4a; 
         }
     </style>
 </head>
@@ -87,7 +87,7 @@
         
     </footer>
     <script>
-        // Function to get the current date minus 2 days in dd/mm/yyyy format
+      
         function getDateMinusTwoDays() {
             const today = new Date();
             today.setDate(today.getDate() - 2);
@@ -97,7 +97,7 @@
             return `${day}/${month}/${year}`;
         }
 
-        // Insert the date into the span with id "date"
+        
         document.getElementById('date').textContent = getDateMinusTwoDays();
     </script>
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
