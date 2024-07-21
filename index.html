@@ -42,17 +42,17 @@ transition: all 0.85;
             display: flex;
             align-items: center;
             justify-content: center;
-            gap: 10px; /* Khoảng cách giữa các phần tử */
+            gap: 10px;
         }
 
         .clock-icons img {
-            width: 24px; /* Kích thước của các biểu tượng chuông */
+            width: 24px; 
             height: 24px;
         }
 
         .clock-icons span {
-            font-size: 16px; /* Kích thước chữ */
-            color: #000; /* Màu chữ */
+            font-size: 16px; 
+            color: #000; 
         }
 </style>
 <body style="background-color: #ff9933;">
@@ -134,7 +134,7 @@ transition: all 0.85;
     <script>
         function getDateMinusTwoDays() {
             const today = new Date();
-            today.setDate(today.getDate() - 2);
+            today.setDate(today.getDate() - 1);
             const day = String(today.getDate()).padStart(2, '0');
             const month = String(today.getMonth() + 1).padStart(2, '0'); // January is 0!
             const year = today.getFullYear();
