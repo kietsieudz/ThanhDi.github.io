@@ -46,6 +46,24 @@
             font-size: 16px; 
             color: #000; 
         }
+        .image-container {
+    position: relative;
+    display: inline-block; /* Ensures that the container fits the size of the content */
+}
+
+.display-img {
+    display: block; /* Ensures the image is treated as a block element */
+}
+
+.gif-img {
+    position: absolute;
+    bottom: 0; /* Position the GIF image at the bottom of the container */
+    left: 0; /* Align the GIF image to the left */
+    width: 100%; /* Ensure the GIF spans the width of the container */
+    height: auto; /* Maintain aspect ratio */
+    z-index: -1; /* Ensure the GIF is behind the other content */
+}
+
     </style>
 </head>
 <body style="background-color: #ff9933;">
