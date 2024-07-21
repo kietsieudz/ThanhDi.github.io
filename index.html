@@ -8,7 +8,7 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Braah+One&family=Play&display=swap" rel="stylesheet">
-    <style>
+  <style>
         .small-text {
             font-size: small; 
             color: #000;
@@ -47,60 +47,40 @@
             color: #000; 
         }
         .image-container {
-    position: relative;
-    display: inline-block; /* Ensures that the container fits the size of the content */
-}
-
-.display-img {
-    display: block; /* Ensures the image is treated as a block element */
-}
-
-.gif-img {
-    position: absolute;
-    bottom: 0; /* Position the GIF image at the bottom of the container */
-    left: 0; /* Align the GIF image to the left */
-    
-    height: auto; /* Maintain aspect ratio */
-    z-index: -1; /* Ensure the GIF is behind the other content */
-}
-.image-container {
-    position: relative;
-    display: inline-block;
-}
-
-.display-img {
-    display: block;
-}
-
-.gif-img {
-    position: absolute;
-    width: 30%; /* Chiếm 30% chiều rộng */
-    height: auto;
-    z-index: -1; /* Đảm bảo ảnh GIF nằm phía sau các phần tử khác */
-}
-
-
-
-
+            position: relative;
+            display: inline-block; /* Ensures that the container fits the size of the content */
+        }
+        .display-img {
+            display: block; /* Ensures the image is treated as a block element */
+        }
+        .gif-img {
+            position: absolute;
+            width: 30%; /* Chiếm 30% chiều rộng */
+            height: auto; /* Maintain aspect ratio */
+            z-index: -1; /* Ensure the GIF is behind the other content */
+        }
+        .gif-img.left {
+            bottom: 0; /* Position the GIF image at the bottom of the container */
+            left: 0; /* Align the GIF image to the left */
+        }
+        .gif-img.right {
+            bottom: 0; /* Position the GIF image at the bottom of the container */
+            right: 0; /* Align the GIF image to the right */
+            transform: scaleX(-1); /* Lật ngang ảnh */
+        }
     </style>
 </head>
 <body style="background-color: #ff9933;">
-    <div>
-   <div class="image-container">
-    <img class="display-img" src="https://i.imgur.com/Za3xlpv.png" alt="Ảnh đại diện">
-
-     
-    <img  class="gif-img left" src="https://images-wixmp-ed30a86b8c4ca887773594c2.wixmp.com/f/b1b05e88-1284-4523-9f55-09d199c58828/dfwfpf8-98f685fe-34f0-4aa3-a409-1f8fae08bb2f.gif?token=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ1cm46YXBwOjdlMGQxODg5ODIyNjQzNzNhNWYwZDQxNWVhMGQyNmUwIiwiaXNzIjoidXJuOmFwcDo3ZTBkMTg4OTgyMjY0MzczYTVmMGQ0MTVlYTBkMjZlMCIsIm9iaiI6W1t7InBhdGgiOiJcL2ZcL2IxYjA1ZTg4LTEyODQtNDUyMy05ZjU1LTA5ZDE5OWM1ODgyOFwvZGZ3ZnBmOC05OGY2ODVmZS0zNGYwLTRhYTMtYTQwOS0xZjhmYWUwOGJiMmYuZ2lmIn1dXSwiYXVkIjpbInVybjpzZXJ2aWNlOmZpbGUuZG93bmxvYWQiXX0.K1ZUN-JnRXtTWFaDcK-N1RprOkHT84YXziLmFmENZag" alt="Ảnh GIF">
-  
-
-    < img class="gif-img right" src="https://images-wixmp-ed30a86b8c4ca887773594c2.wixmp.com/f/b1b05e88-1284-4523-9f55-09d199c58828/dfwfpf8-98f685fe-34f0-4aa3-a409-1f8fae08bb2f.gif?token=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ1cm46YXBwOjdlMGQxODg5ODIyNjQzNzNhNWYwZDQxNWVhMGQyNmUwIiwiaXNzIjoidXJuOmFwcDo3ZTBkMTg4OTgyMjY0MzczYTVmMGQ0MTVlYTBkMjZlMCIsIm9iaiI6W1t7InBhdGgiOiJcL2ZcL2IxYjA1ZTg4LTEyODQtNDUyMy05ZjU1LTA5ZDE5OWM1ODgyOFwvZGZ3ZnBmOC05OGY2ODVmZS0zNGYwLTRhYTMtYTQwOS0xZjhmYWUwOGJiMmYuZ2lmIn1dXSwiYXVkIjpbInVybjpzZXJ2aWNlOmZpbGUuZG93bmxvYWQiXX0.K1ZUN-JnRXtTWFaDcK-N1RprOkHT84YXziLmFmENZag" alt="Ảnh GIF">
-
-    <h1 style="color: #00FF21; font-family: Tahoma, sans-serif; font-size: 36px; text-shadow: 2px 2px 4px #000;">
-        <img src="images/nro.png" width="18" height="18" alt="Verified">
-        Ngọc Rồng NThev
-        <img src="images/nro.png" width="18" height="18" alt="Verified">
-    </h1>
-</div>
+    <div class="image-container">
+        <img class="display-img" src="https://i.imgur.com/Za3xlpv.png" alt="Ảnh đại diện">
+        <img class="gif-img left" src="https://images-wixmp-ed30a86b8c4ca887773594c2.wixmp.com/f/b1b05e88-1284-4523-9f55-09d199c58828/dfwfpf8-98f685fe-34f0-4aa3-a409-1f8fae08bb2f.gif?token=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ1cm46YXBwOjdlMGQxODg5ODIyNjQzNzNhNWYwZDQxNWVhMGQyNmUwIiwiaXNzIjoidXJuOmFwcDo3ZTBkMTg4OTgyMjY0MzczYTVmMGQ0MTVlYTBkMjZlMCIsIm9iaiI6W1t7InBhdGgiOiJcL2ZcL2IxYjA1ZTg4LTEyODQtNDUyMy05ZjU1LTA5ZDE5OWM1ODgyOFwvZGZ3ZnBmOC05OGY2ODVmZS0zNGYwLTRhYTMtYTQwOS0xZjhmYWUwOGJiMmYuZ2lmIn1dXSwiYXVkIjpbInVybjpzZXJ2aWNlOmZpbGUuZG93bmxvYWQiXX0.K1ZUN-JnRXtTWFaDcK-N1RprOkHT84YXziLmFmENZag" alt="Ảnh GIF">
+        <img class="gif-img right" src="https://images-wixmp-ed30a86b8c4ca887773594c2.wixmp.com/f/b1b05e88-1284-4523-9f55-09d199c58828/dfwfpf8-98f685fe-34f0-4aa3-a409-1f8fae08bb2f.gif?token=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ1cm46YXBwOjdlMGQxODg5ODIyNjQzNzNhNWYwZDQxNWVhMGQyNmUwIiwiaXNzIjoidXJuOmFwcDo3ZTBkMTg4OTgyMjY0MzczYTVmMGQ0MTVlYTBkMjZlMCIsIm9iaiI6W1t7InBhdGgiOiJcL2ZcL2IxYjA1ZTg4LTEyODQtNDUyMy05ZjU1LTA5ZDE5OWM1ODgyOFwvZGZ3ZnBmOC05OGY2ODVmZS0zNGYwLTRhYTMtYTQwOS0xZjhmYWUwOGJiMmYuZ2lmIn1dXSwiYXVkIjpbInVybjpzZXJ2aWNlOmZpbGUuZG93bmxvYWQiXX0.K1ZUN-JnRXtTWFaDcK-N1RprOkHT84YXziLmFmENZag" alt="Ảnh GIF">
+        <h1 style="color: #00FF21; font-family: Tahoma, sans-serif; font-size: 36px; text-shadow: 2px 2px 4px #000;">
+            <img src="images/nro.png" width="18" height="18" alt="Verified">
+            Ngọc Rồng NThev
+            <img src="images/nro.png" width="18" height="18" alt="Verified">
+        </h1>
+    </div>
 
 
 
