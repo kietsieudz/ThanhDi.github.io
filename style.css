@@ -79,7 +79,6 @@ body {
     text-shadow: 3px 0 8px #fff;
 }
 
-
         .small-text {
             font-size: small; 
             color: #000;
@@ -89,14 +88,21 @@ body {
         }
   
         .link a {
-            color: white; 
             background-color: #924c31;
-       
-            border-radius: 8px;
+       display: inline-block;
+width: 135px; 
+height: 25px; 
+border-radius: 8px;
+margin: 5px 5px 0 0;
+color: #fff;
+line-height: 45px; 
+transition: all 0.85;
             text-decoration: none; 
-            transition: background-color 0.3s ease; 
+      
         }
         .link a:hover {
+            background-color: rgba(0, 0, 0, 0.35); 
+            box-shadow: opx epx 10px;
             background-color: #a65f4a; 
         }
 
