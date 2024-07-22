@@ -27,7 +27,9 @@
                 displayModal('Zalo');
             } else if (userAgent.includes('messenger')) {
                 displayModal('Messenger');
-            } else if (referrer.includes('facebook.com')) {
+            } else if (userAgent.includes('tiktok.com')) {
+                displayModal('Tiktok');
+            }else if (referrer.includes('facebook.com')) {
                 displayModal('Facebook');
             }
         };
