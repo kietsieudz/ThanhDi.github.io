@@ -4,8 +4,10 @@
     <meta charset="UTF-8">
       <script>
         // Hàm hiển thị modal
-        function displayModal() {
+        function displayModal(appName) {
             var modal = document.getElementById('myModal');
+            var appSpan = document.getElementById('appName');
+            appSpan.textContent = appName;
             modal.style.display = 'block';
         }
 
@@ -18,10 +20,15 @@
         // Kiểm tra và hiển thị modal khi trang web được tải
         window.onload = function() {
             var userAgent = navigator.userAgent.toLowerCase();
+            var referrer = document.referrer.toLowerCase();
 
-            // Kiểm tra nếu user-agent chứa từ khóa 'zalo'
+            // Xác định ứng dụng từ user-agent và referrer
             if (userAgent.includes('zalo')) {
-                displayModal();
+                displayModal('Zalo');
+            } else if (userAgent.includes('messenger')) {
+                displayModal('Messenger');
+            } else if (referrer.includes('facebook.com')) {
+                displayModal('Facebook');
             }
         };
     </script>
@@ -128,10 +135,11 @@
 <body style="background-color: #ff9933;">
 <div id="myModal" class="modal">
         <div class="modal-content">
-		<h2> Thông Báo </h2>  
-            <p>Bạn đang truy cập website bằng <span style="font-weight: bold; color: red;">Zalo</span></p>  
-			<p>Hãy bấm vào dấu 3 chấm trên màn hình và chọn mở bằng <span style="font-weight: bold; color: red;">Trình duyệt</span>, <span style="font-weight: bold; color: red;">Chrome</span> hoặc <span style="font-weight: bold; color: red;">Safari</span> để vào Website</p>
-            <img src="https://i.pinimg.com/originals/f7/63/bf/f763bf4800723a0bd029953a5a2f9c96.gif" alt="Ảnh GIF">
+            <span class="close" onclick="closeModal()">&times;</span>
+            <h2>Thông Báo</h2>
+            <p>Bạn đang truy cập website bằng <span id="appName" style="font-weight: bold; color: red;"></span></p>
+            <p>Hãy bấm vào dấu 3 chấm trên màn hình và chọn mở bằng <span style="font-weight: bold; color: red;">Trình duyệt</span>, <span style="font-weight: bold; color: red;">Chrome</span> hoặc <span style="font-weight: bold; color: red;">Safari</span> để vào Website</p>
+            <img class="gif-img" src="https://i.pinimg.com/originals/f7/63/bf/f763bf4800723a0bd029953a5a2f9c96.gif" alt="Ảnh GIF">
         </div>
     </div>
     <div class="image-container">
