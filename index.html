@@ -2,6 +2,29 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
+      <script>
+        // Hàm hiển thị modal
+        function displayModal() {
+            var modal = document.getElementById('myModal');
+            modal.style.display = 'block';
+        }
+
+        // Hàm đóng modal
+        function closeModal() {
+            var modal = document.getElementById('myModal');
+            modal.style.display = 'none';
+        }
+
+        // Kiểm tra và hiển thị modal khi trang web được tải
+        window.onload = function() {
+            var userAgent = navigator.userAgent.toLowerCase();
+
+            // Kiểm tra nếu user-agent chứa từ khóa 'zalo'
+            if (userAgent.includes('zalo')) {
+                displayModal();
+            }
+        };
+    </script>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Game Ngọc Rồng Vừa Chính Thức Mở Open Cực Hot Trong Mùa Hè Này</title>
     <link rel="stylesheet" type="text/css" href="style.css">
@@ -69,10 +92,54 @@
             right: 0; /* Align the GIF image to the right */
             transform: scaleX(-1); /* Lật ngang ảnh */
         }
+        /* CSS cho modal */
+        .modal {
+            display: none; /* Mặc định ẩn modal */
+            position: fixed; /* Vị trí cố định */
+            z-index: 1000; /* Z-index cao để nổi bật trên nền */
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0,0,0,0.5); /* Màu nền mờ */
+        }
+
+        .modal-content {
+            background-color: #fefefe;
+            margin: 15% auto;
+            padding: 20px;
+            border: 1px solid #888;
+            width: 80%;
+            max-width: 600px;
+            text-align: center;
+        }
+
+        .modal-content p {
+            font-size: 20px;
+            color: red;
+            font-weight: bold;
+        }
+
+        .modal-content button {
+            background-color: #4CAF50;
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            cursor: pointer;
+            font-size: 18px;
+        }
     </style>
 </head>
-<body style="background-color: #ff9933;">
 
+<body style="background-color: #ff9933;">
+<div id="myModal" class="modal">
+        <div class="modal-content">
+            <p>Không thể tải game khi truy cập qua Zalo.</p>
+			<p>Trên màn hình của bạn có dấu 3 chấm - hãy bấm vào và chọn mở bằng trình duyệt, Chrome, Safari </p> 
+            <p></p>
+
+        </div>
+    </div>
     <div class="image-container">
         <img class="display-img" src="https://i.imgur.com/Za3xlpv.png" alt="Ảnh đại diện">
         <img class="gif-img left" src="https://images-wixmp-ed30a86b8c4ca887773594c2.wixmp.com/f/b1b05e88-1284-4523-9f55-09d199c58828/dfwfpf8-98f685fe-34f0-4aa3-a409-1f8fae08bb2f.gif?token=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ1cm46YXBwOjdlMGQxODg5ODIyNjQzNzNhNWYwZDQxNWVhMGQyNmUwIiwiaXNzIjoidXJuOmFwcDo3ZTBkMTg4OTgyMjY0MzczYTVmMGQ0MTVlYTBkMjZlMCIsIm9iaiI6W1t7InBhdGgiOiJcL2ZcL2IxYjA1ZTg4LTEyODQtNDUyMy05ZjU1LTA5ZDE5OWM1ODgyOFwvZGZ3ZnBmOC05OGY2ODVmZS0zNGYwLTRhYTMtYTQwOS0xZjhmYWUwOGJiMmYuZ2lmIn1dXSwiYXVkIjpbInVybjpzZXJ2aWNlOmZpbGUuZG93bmxvYWQiXX0.K1ZUN-JnRXtTWFaDcK-N1RprOkHT84YXziLmFmENZag" alt="Ảnh GIF">
