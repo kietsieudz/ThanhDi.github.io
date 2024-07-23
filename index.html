@@ -121,21 +121,17 @@
             top: 0;
             width: 100%;
             height: 100%;
-            background-color: rgba(0, 0, 0, 0.5); /* Màu nền mờ */
-            display: flex; /* Sử dụng flexbox để căn giữa nội dung */
-            align-items: center; /* Căn giữa theo chiều dọc */
-            justify-content: center; /* Căn giữa theo chiều ngang */
+            background-color: rgba(0,0,0,0.5); /* Màu nền mờ */
         }
 
         .modal-content {
             background-color: #fefefe;
+            margin: 15% auto;
             padding: 20px;
-            border: 2px solid #ff0000; /* Đường viền màu đỏ giống như .notification-container */
-            border-radius: 10px; /* Bo tròn góc */
+            border: 1px solid #888;
             width: 80%;
             max-width: 600px;
             text-align: center;
-            box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1); /* Đổ bóng nhẹ */
         }
 
         .modal-content p {
@@ -143,26 +139,23 @@
             color: #000;
             font-weight: bold;
         }
-
-        .modal-content h2 {
+		.modal-content h2 {
             color: red;
             font-weight: bold;
         }
-
-        .blinking-text {
-            color: black;
-            animation: blink 1s step-start infinite;
-            font-size: 22px;
-            font-weight: bold;
+.blinking-text {
             text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
-        }
+            font-size: 16px;
+    animation: blink 0.2s infinite;
+    font-weight: bold;
+    color: black;
+}
 
-        @keyframes blink {
-            0% { color: black; }
-            50% { color: red; }
-            100% { color: black; }
-        }
-
+@keyframes blink {
+    0% { color: black; }
+    50% { color: red; }
+    100% { color: black; }
+}
         .notification-container {
             border: 2px solid #ff0000; /* Đường viền màu đỏ */
             padding: 20px; /* Khoảng cách bên trong */
