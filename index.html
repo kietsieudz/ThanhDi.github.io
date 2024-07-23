@@ -122,16 +122,20 @@
             width: 100%;
             height: 100%;
             background-color: rgba(0,0,0,0.5); /* Màu nền mờ */
+            display: flex; /* Sử dụng flexbox để căn giữa nội dung */
+            align-items: center; /* Căn giữa theo chiều dọc */
+            justify-content: center; /* Căn giữa theo chiều ngang */
         }
 
         .modal-content {
             background-color: #fefefe;
-            margin: 15% auto;
             padding: 20px;
-            border: 1px solid #888;
+            border: 2px solid #ff0000; /* Đường viền màu đỏ giống như .notification-container */
+            border-radius: 10px; /* Bo tròn góc */
             width: 80%;
             max-width: 600px;
             text-align: center;
+            box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1); /* Đổ bóng nhẹ */
         }
 
         .modal-content p {
@@ -139,9 +143,19 @@
             color: #000;
             font-weight: bold;
         }
-		.modal-content h2 {
+
+        .modal-content h2 {
             color: red;
             font-weight: bold;
+        }
+
+        .blinking-text {
+            color: #ff0000;
+            animation: blink 1s step-start infinite;
+        }
+
+        @keyframes blink {
+            50% { opacity: 0; }
         }
         .blinking-text {
             text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
