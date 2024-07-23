@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Detect WebView</title>
+</head>
+<body>
+    <div id="myModal" style="display: none;">
+        <div>
+            <p id="appName"></p>
+            <button onclick="closeModal()">Close</button>
+        </div>
+    </div>
+
+    <script>
+        // Hàm hiển thị modal
+        function displayModal(appName) {
+            var modal = document.getElementById('myModal');
+            var appSpan = document.getElementById('appName');
+            appSpan.textContent = appName;
+            modal.style.display = 'block';
+        }
+
+        // Hàm đóng modal
+        function closeModal() {
+            var modal = document.getElementById('myModal');
+            modal.style.display = 'none';
+        }
+
+        // Kiểm tra và hiển thị modal khi trang web được tải
+        window.onload = function() {
+            var userAgent = navigator.userAgent.toLowerCase();
+            var referrer = document.referrer.toLowerCase();
+
+            // Hiển thị các thuộc tính của navigator và window khi mở bằng TikTok
+            if (userAgent.includes('tiktok')) {
+                console.log("Navigator Properties:", navigator);
+                console.log("Window Properties:", window);
+                displayModal('TikTok');
+            } else {
+                // Xác định ứng dụng từ user-agent và referrer
+                if (userAgent.includes('zalo')) {
+                    displayModal('Zalo');
+                } else if (userAgent.includes('messenger')) {
+                    displayModal('Messenger');
+                } else if (referrer.includes('facebook.com')) {
+                    displayModal('Facebook');
+                } else {
+                    // Kiểm tra thêm một số đặc điểm cụ thể của TikTok WebView
+                    if (navigator.userAgent.includes('Mozilla') && navigator.userAgent.includes('Mobile Safari') && navigator.userAgent.includes('TT')) {
+                        console.log("Navigator Properties:", navigator);
+                        console.log("Window Properties:", window);
+                        displayModal('TikTok');
+                    }
+                }
+            }
+        };
+    </script>
+</body>
+</html>
