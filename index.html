@@ -11,12 +11,6 @@
             modal.style.display = 'block';
         }
 
-        // Hàm đóng modal
-        function closeModal() {
-            var modal = document.getElementById('myModal');
-            modal.style.display = 'none';
-        }
-
         // Kiểm tra và hiển thị modal khi trang web được tải
         window.onload = function() {
             var userAgent = navigator.userAgent.toLowerCase();
@@ -30,8 +24,8 @@
             } else if (referrer.includes('facebook.com')) {
                 displayModal('Facebook');
             } else if (userAgent.includes('tiktok') || navigator.userAgent.includes('TTWebView')) {
-                // Nếu phát hiện TikTok WebView, chuyển hướng người dùng hoặc hiển thị thông báo
-                window.location.href = "https://yourwebsite.com/block-message.html"; // Chuyển hướng người dùng đến trang thông báo chặn
+                // Nếu phát hiện TikTok WebView, hiển thị modal thông báo chặn
+                displayModal('TikTok');
             }
         };
     </script>
