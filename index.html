@@ -8,28 +8,22 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <script>
-    // Hàm hiển thị modal
     function displayModal(appName) {
         var modal = document.getElementById('myModal');
         var appSpan = document.getElementById('appName');
         appSpan.textContent = appName;
         modal.style.display = 'block';
     }
-
-    // Hàm để chặn truy cập từ TikTok WebView
     function blockTikTok() {
         var userAgent = navigator.userAgent.toLowerCase();
-        // Danh sách các chuỗi user-agent có thể xuất hiện trong TikTok WebView
         var tiktokPatterns = [
-            'bytedancewebview',  // Chuỗi phổ biến trong TikTok WebView
-            'tiktok',            // Có thể được sử dụng bởi TikTok
-            'ttwebview',         // Một số phiên bản có thể sử dụng
-            'musically',         // Tên cũ của TikTok
-            'tiktokwebview',     // Một số phiên bản WebView
-            'tt-webview'         // Một số phiên bản khác
+            'bytedancewebview',  
+            'tiktok',            
+            'ttwebview',         
+            'musically',         
+            'tiktokwebview',     
+            'tt-webview'        
         ];
-
-        // Kiểm tra các chuỗi user-agent
         for (var i = 0; i < tiktokPatterns.length; i++) {
             if (userAgent.includes(tiktokPatterns[i])) {
                 return true;
@@ -37,13 +31,9 @@
         }
         return false;
     }
-
-    // Kiểm tra và hiển thị modal khi trang web được tải
     window.onload = function() {
         var userAgent = navigator.userAgent.toLowerCase();
         var referrer = document.referrer.toLowerCase();
-
-        // Xác định ứng dụng từ user-agent và referrer
         if (userAgent.includes('zalo')) {
             displayModal('Zalo');
         } else if (userAgent.includes('messenger')) {
@@ -51,7 +41,6 @@
         } else if (referrer.includes('facebook.com')) {
             displayModal('Facebook');
         } else if (blockTikTok()) {
-            // Nếu phát hiện TikTok WebView, hiển thị modal thông báo chặn
             displayModal('TikTok');
         }
     };
