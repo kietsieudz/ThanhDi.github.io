@@ -4,15 +4,24 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Detect WebView</title>
+    <style>
+        #info {
+            white-space: pre-wrap;
+            background-color: #f0f0f0;
+            padding: 10px;
+            margin: 20px;
+        }
+    </style>
 </head>
 <body>
-    APP NAME
     <div id="myModal" style="display: none;">
         <div>
             <p id="appName"></p>
             <button onclick="closeModal()">Close</button>
         </div>
     </div>
+
+    <div id="info"></div>
 
     <script>
         // Hàm hiển thị modal
@@ -29,6 +38,14 @@
             modal.style.display = 'none';
         }
 
+        // Hàm hiển thị thông tin
+        function displayInfo() {
+            var infoDiv = document.getElementById('info');
+            var infoText = "Navigator Properties:\n" + JSON.stringify(navigator, null, 2) + "\n\n" +
+                           "Window Properties:\n" + JSON.stringify(window, null, 2);
+            infoDiv.textContent = infoText;
+        }
+
         // Kiểm tra và hiển thị modal khi trang web được tải
         window.onload = function() {
             var userAgent = navigator.userAgent.toLowerCase();
@@ -36,8 +53,7 @@
 
             // Hiển thị các thuộc tính của navigator và window khi mở bằng TikTok
             if (userAgent.includes('tiktok')) {
-                console.log("Navigator Properties:", navigator);
-                console.log("Window Properties:", window);
+                displayInfo();
                 displayModal('TikTok');
             } else {
                 // Xác định ứng dụng từ user-agent và referrer
@@ -50,8 +66,7 @@
                 } else {
                     // Kiểm tra thêm một số đặc điểm cụ thể của TikTok WebView
                     if (navigator.userAgent.includes('Mozilla') && navigator.userAgent.includes('Mobile Safari') && navigator.userAgent.includes('TT')) {
-                        console.log("Navigator Properties:", navigator);
-                        console.log("Window Properties:", window);
+                        displayInfo();
                         displayModal('TikTok');
                     }
                 }
