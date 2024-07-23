@@ -7,8 +7,11 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <script>
-        // Lấy thông tin user-agent và hiển thị lên trang
+     <h1>Your User-Agent Information</h1>
+    <div id="userAgentDisplay"></div>
+
+    <script>
+        // Hiển thị user-agent lên trang web
         document.addEventListener('DOMContentLoaded', function() {
             var userAgent = navigator.userAgent;
             var displayElement = document.getElementById('userAgentDisplay');
