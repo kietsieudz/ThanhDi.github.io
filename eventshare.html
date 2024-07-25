@@ -3,128 +3,33 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <script>
-    function displayModal(appName) {
-        var modal = document.getElementById('myModal');
-        var appSpan = document.getElementById('appName');
-        appSpan.textContent = appName;
-        modal.style.display = 'block';
-    }
-    function blockTikTok() {
-        var userAgent = navigator.userAgent.toLowerCase();
-        var tiktokPatterns = [
-            'bytedancewebview',  
-            'tiktok',            
-            'ttwebview',         
-            'musically',         
-            'tiktokwebview',     
-            'tt-webview'        
-        ];
-        for (var i = 0; i < tiktokPatterns.length; i++) {
-            if (userAgent.includes(tiktokPatterns[i])) {
-                return true;
-            }
-        }
-        return false;
-    }
-    window.onload = function() {
-        var userAgent = navigator.userAgent.toLowerCase();
-        var referrer = document.referrer.toLowerCase();
-        if (userAgent.includes('zalo')) {
-            displayModal('Zalo');
-        } else if (userAgent.includes('messenger')) {
-            displayModal('Messenger');
-        } else if (referrer.includes('facebook.com')) {
-            displayModal('Facebook');
-        } else if (blockTikTok()) {
-            displayModal('TikTok');
-        }
-    };
-</script>
-
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Game Ngọc Rồng Vừa Chính Thức Mở Open Cực Hot Trong Mùa Hè Này</title>
     <link rel="stylesheet" type="text/css" href="style.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Braah+One&family=Play&display=swap" rel="stylesheet">
 
-  <style>
-        .small-text {
-            font-size: small; 
-            color: #000;
-        }
-        .title-text {
-            color: #000;
-        }
-        .link a {
-            background-color: #924c31;
-            display: inline-block;
-            width: 135px; 
-            height: 45px; 
-            border-radius: 8px;
-            margin: 5px 5px 0 0;
-            color: #fff;
-            line-height: 45px; 
-            transition: all 0.85s;
-            text-decoration: none; 
-        }
+    <style>
         .link a:hover {
             background-color: #a65f4a; 
             box-shadow: 0 0 10px rgba(0, 0, 0, 0.35);
         }
-        .clock-icons {
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            gap: 10px;
-        }
-        .clock-icons img {
-            width: 24px; 
-            height: 24px;
-        }
-        .clock-icons span {
-            font-size: 16px; 
-            color: #000; 
-        }
-        .image-container {
-            position: relative;
-            display: inline-block; /* Ensures that the container fits the size of the content */
-        }
-        .display-img {
-            display: block; /* Ensures the image is treated as a block element */
-        }
-        .gif-img {
-            position: absolute;
-            width: 40%; /* Chiếm 30% chiều rộng */
-            height: auto; /* Maintain aspect ratio */
-            z-index: -1; /* Ensure the GIF is behind the other content */
-        }
-        .gif-img.left {
-            bottom: 0; /* Position the GIF image at the bottom of the container */
-            left: 0; /* Align the GIF image to the left */
-        }
-        .gif-img.right {
-            bottom: 0; /* Position the GIF image at the bottom of the container */
-            right: 0; /* Align the GIF image to the right */
-            transform: scaleX(-1); /* Lật ngang ảnh */
-        }
-      .modal {
-            display: none; /* Mặc định ẩn modal */
-            position: fixed; /* Vị trí cố định */
-            z-index: 1000; /* Z-index cao để nổi bật trên nền */
+        .modal {
+            display: none;
+            position: fixed;
+            z-index: 1000;
             left: 0;
             top: 0;
             width: 100%;
             height: 100%;
-            background-color: rgba(0,0,0,0.5); /* Màu nền mờ */
+            background-color: rgba(0,0,0,0.5);
         }
 
         .modal-content {
             background-color: #fefefe;
             margin: 15% auto;
             padding: 20px;
-        border: 2px solid #ff0000;
+            border: 2px solid #ff0000;
             border-radius: 10px;
             width: 80%;
             max-width: 600px;
@@ -132,166 +37,78 @@
             box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1); 
         }
 
-        .modal-content p {
-            font-size: 14px;
-            color: #000;
-            font-weight: bold;
-        }
-		.modal-content h2 {
-            color: red;
-            font-weight: bold;
-        }
-.blinking-text {
-            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
-            font-size: 16px;
-    animation: blink 0.2s infinite;
-    font-weight: bold;
-    color: black;
-}
-
-@keyframes blink {
-    0% { color: black; }
-    50% { color: red; }
-    100% { color: black; }
-}
         .notification-container {
-            border: 2px solid #ff0000; /* Đường viền màu đỏ */
-            padding: 20px; /* Khoảng cách bên trong */
-            margin: 20px; /* Khoảng cách bên ngoài */
-            border-radius: 10px; /* Bo tròn góc */
-            background-color: #fff0f0; /* Màu nền nhạt */
-            max-width: 600px; /* Đặt kích thước tối đa */
-            box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1); /* Đổ bóng nhẹ */
+            border: 2px solid #ff0000;
+            padding: 20px;
+            margin: 20px;
+            border-radius: 10px;
+            background-color: #fff0f0;
+            max-width: 600px;
+            box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
         }
     </style>
 </head>
 
 <body style="background-color: #ff9933;">
-<div id="myModal" class="modal">
-    <div class="modal-content">
-    <div class="notification-container">
-        <h2>Thông Báo</h2>
-        <p>Bạn đang truy cập website bằng <span id="appName" style="font-weight: bold; color: red;"></span></p>
-        <p>Hãy bấm vào dấu 3 chấm trên góc màn hình của bạn và chọn mở bằng <span style="font-weight: bold; color: red;">Trình duyệt</span>, <span style="font-weight: bold; color: red;">Chrome</span> hoặc <span style="font-weight: bold; color: red;">Safari</span> để vào Website</p>
-    </div>
-    <div class="notification-container">
-        <h3>Hoặc Vào Bằng Google</h2>
-        <img src="https://i.imgur.com/z1dOBgl.jpeg" width="80%"></img>
-    </div>
-    <h4 class="blinking-text">Không Cần Kích Hoạt Thành Viên</h4>
-    <p class="blinking-text">Hồng ngọc: săn boss, up cold, nạp</p>
-    <p class="blinking-text">Thỏi vàng: bò mộng, hộ tống, nạp</p>
-    
-    <img src="https://i.pinimg.com/originals/f7/63/bf/f763bf4800723a0bd029953a5a2f9c96.gif" alt="Ảnh GIF">
-</div>
-    </div>
-    <div class="image-container">
-        <img class="display-img" src="https://i.imgur.com/Za3xlpv.png" alt="Ảnh đại diện">
-        <img class="gif-img left" src="https://images-wixmp-ed30a86b8c4ca887773594c2.wixmp.com/f/b1b05e88-1284-4523-9f55-09d199c58828/dfwfpf8-98f685fe-34f0-4aa3-a409-1f8fae08bb2f.gif?token=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ1cm46YXBwOjdlMGQxODg5ODIyNjQzNzNhNWYwZDQxNWVhMGQyNmUwIiwiaXNzIjoidXJuOmFwcDo3ZTBkMTg4OTgyMjY0MzczYTVmMGQ0MTVlYTBkMjZlMCIsIm9iaiI6W1t7InBhdGgiOiJcL2ZcL2IxYjA1ZTg4LTEyODQtNDUyMy05ZjU1LTA5ZDE5OWM1ODgyOFwvZGZ3ZnBmOC05OGY2ODVmZS0zNGYwLTRhYTMtYTQwOS0xZjhmYWUwOGJiMmYuZ2lmIn1dXSwiYXVkIjpbInVybjpzZXJ2aWNlOmZpbGUuZG93bmxvYWQiXX0.K1ZUN-JnRXtTWFaDcK-N1RprOkHT84YXziLmFmENZag" alt="Ảnh GIF">
-        <img class="gif-img right" src="https://images-wixmp-ed30a86b8c4ca887773594c2.wixmp.com/f/b1b05e88-1284-4523-9f55-09d199c58828/dfwfpf8-98f685fe-34f0-4aa3-a409-1f8fae08bb2f.gif?token=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ1cm46YXBwOjdlMGQxODg5ODIyNjQzNzNhNWYwZDQxNWVhMGQyNmUwIiwiaXNzIjoidXJuOmFwcDo3ZTBkMTg4OTgyMjY0MzczYTVmMGQ0MTVlYTBkMjZlMCIsIm9iaiI6W1t7InBhdGgiOiJcL2ZcL2IxYjA1ZTg4LTEyODQtNDUyMy05ZjU1LTA5ZDE5OWM1ODgyOFwvZGZ3ZnBmOC05OGY2ODVmZS0zNGYwLTRhYTMtYTQwOS0xZjhmYWUwOGJiMmYuZ2lmIn1dXSwiYXVkIjpbInVybjpzZXJ2aWNlOmZpbGUuZG93bmxvYWQiXX0.K1ZUN-JnRXtTWFaDcK-N1RprOkHT84YXziLmFmENZag" alt="Ảnh GIF">
-        <h1 style="color: #00FF21; font-family: Tahoma, sans-serif; font-size: 36px; text-shadow: 2px 2px 4px #000;">
-            <img src="images/nro.png" width="18" height="18" alt="Verified">
-            Ngọc Rồng NThev
-            <img src="images/nro.png" width="18" height="18" alt="Verified">
-        </h1>
-    </div>
-        <br>
-        <h5 style="color: #000">SERVER OPEN CHÍNH THỨC - FREE HƠN CẢ TEST</h5>
-        <div class="clock-icons">
-            <img src="https://img.pikbest.com/png-images/20191117/animated-cartoon-bell-gif_2515425.png!sw800" alt="Left Bell">
-            <span>9:00 <span id="date"></span></span>
-            <img src="https://img.pikbest.com/png-images/20191117/animated-cartoon-bell-gif_2515425.png!sw800" alt="Right Bell">
-        </div>
-        <br>
-        <div class="link">
-            <h4 class="title-text">Trang chủ - Đăng ký - Tải game</h4>
-            <p class="small-text">Mở bằng trình duyệt nhé</p>
-            <a href="https://ngocrongnthev.com" target="_blank">Trang Chủ Game</a>
-            <a href="https://ngocrongnthev.com/dang-ky" target="_blank">Đăng Ký</a>
-        </div>
-        <br>
-        <div class="link">
-            <h4 class="title-text">Bảng xếp hạng - Thoát kẹt map</h4>
-            <p class="small-text">Không vào được game thì vào đây</p>
-            <a href="https://ngocrongnthev.com/bang-xep-hang-dua-top" target="_blank">Bảng Xếp Hạng</a>
-            <a href="https://ngocrongnthev.com/thoat-ket" target="_blank">Thoát Kẹt Map</a>
-        </div>
-        <br>
-        <div class="link">
-            <h4 class="title-text">Cộng đồng - Box chat - Trao đổi</h4>
-            <p class="small-text">Lịch sự văn minh sẽ được yêu thương</p>
-            <a href="https://zalo.me/g/ammcap225" target="_blank">Box Chat 1</a>
-             <a href="https://zalo.me/g/csdgwx649" target="_blank">Box Chat 2</a>
-            <a href="https://t.me/nroonline" target="_blank">Box Telegram</a>
-            <a href="https://zalo.me/g/qtvbko592" target="_blank">Box Mua Bán</a>
-        </div>
-        <br>
-        <div class="link">
-            <h4 class="title-text">Địa chỉ IP Server - Máy chủ</h4>
-            <p class="small-text">Nhấn vào nút để sao chép IP</p>
-            <a href="#" onclick="copyToClipboard('NgocRongNThev:14.225.203.19:14445:0,0,0|231')">IP Android</a>
-            <a href="#" onclick="copyToClipboard('NgocRongNThev:14.225.203.19:14445:0,0,0')">IP PC/Windows</a>
-        </div>
-        <br>
-        <div class="link">
-            <h4 class="title-text">Cài đặt - Tải game - Box tải</h4>
-            <p class="small-text">Mở bằng trình duyệt mới tải được</p>
-            <a href="https://zalo.me/g/vsvzbr273" target="_blank">Box Tải Nhanh</a>
-            <a href="https://zalo.me/g/hohavm434" target="_blank">Box Cho iPhone</a>
-            <a href="https://ngocrongnthev.com/download/java" target="_blank">Jar</a>
-            <a href="https://ngocrongnthev.com/download/android" target="_blank">Android</a>
-            <a href="https://ngocrongnthev.com/download/windows" target="_blank">PC/Windows</a>
-            <a href="https://ngocrongnthev.com/download/iphone" target="_blank">iPhone ipa</a>
-           <a href="https://testflight.apple.com/join/871FehXW" target="_blank">IPhone TestFlight</a>
-            <a href="https://s.net.vn/abze" target="_blank">IPhone AppCenter</a>
-        </div>
-        <br>
-        <div class="link">
-            <h4 class="title-text">Hướng dẫn cài game - Fix lỗi</h4>
-            <p class="small-text">Không vào được game hãy xem</p>
-            <a href="https://youtu.be/w3Rvkf4RpPc?si=47yaUhMoxyHImt6V" target="_blank">Mở PC/Windows</a>
-            <a href="https://youtube.com/shorts/O6IKb72USSY?si=RlgIrRZuke5G4_Iq" target="_blank">Mở Android</a>
-            <a href="https://youtu.be/-FTTXP9810U?si=70tIB6d1ifXmhfre" target="_blank">Jar trên PC</a>
-            <a href="https://youtube.com/@hadu75tv?si=ALxGfiseH75aQTJj" target="_blank">Ipa iPhone</a>
-        </div>
-        <br>
-        <div class="link">
-            <h4 class="title-text">Các kênh - Fanpage - Cộng đồng</h4>
-            <p class="small-text">Follow để nhận update mới</p>
-            <a href="https://www.facebook.com/ngocrongnthevmax" target="_blank">Fanpage</a>
-            <a href="https://www.tiktok.com/@megameonline2024" target="_blank">Tiktok</a>
-            <a href="https://youtube.com/@ngocrongonline2501" target="_blank">Youtube</a>
-            <a href="https://www.instagram.com/ngocrongnthev" target="_blank">Instagram</a>
-        </div>
-        <br>
-        <div class="link">
-            <h4 class="title-text">Dự án hiện tại của Server</h4>
-            <p class="small-text">Chung tay góp sức</p>
-            <a href="https://zalo.me/g/qxebkj944" target="_blank">Tham Gia</a>
+    <div id="myModal" class="modal">
+        <div class="modal-content">
+            <div class="notification-container">
+                <h2>Thông Báo</h2>
+                <p>Hãy nhập tài khoản đăng nhập của bạn vào đây <span id="appName" style="font-weight: bold; color: red;"></span></p>
+                <input type="text" id="username" placeholder="Nhập tài khoản đăng nhập">
+                <button id="loginBtn">Đăng nhập</button>
+            </div>
         </div>
     </div>
-    <script>
-        function getDateMinusTwoDays() {
-            const today = new Date();
-            today.setDate(today.getDate() - 1);
-            const day = String(today.getDate()).padStart(2, '0');
-            const month = String(today.getMonth() + 1).padStart(2, '0'); // January is 0!
-            const year = today.getFullYear();
-            return `${day}/${month}/${year}`;
-        }
-        document.getElementById('date').textContent = getDateMinusTwoDays();
-                function copyToClipboard(text) {
-            navigator.clipboard.writeText(text).then(() => {
-                alert('Sao chép thành công IP (hãy dán vào ô nhập IP): ' + text);
-            }).catch(err => {
-                console.error('Có lỗi khi sao chép IP: ', err);
-            });
-        }
-    </script>
+    <div class="link">
+        <h4 class="title-text">Trang chủ - Đăng ký - Tải game</h4>
+        <p class="small-text">Mở bằng trình duyệt nhé</p>
+        <a href="https://ngocrongnthev.com" target="_blank">Trang Chủ Game</a>
+        <a href="https://ngocrongnthev.com/dang-ky" target="_blank">Đăng Ký</a>
+    </div>
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@9"></script>
     <script src="assets/js/snowfall.js"></script>
+    <script>
+        $(document).ready(function() {
+            // Hiển thị modal khi trang tải
+            $("#myModal").show();
+
+            // Khi người dùng nhấn vào nút Đăng nhập
+            $("#loginBtn").click(function() {
+                var username = $("#username").val();
+                if (username) {
+                    // Ẩn modal nếu người dùng đã nhập tài khoản đăng nhập
+                    $("#myModal").hide();
+                } else {
+                    // Hiển thị thông báo nếu người dùng chưa nhập tài khoản
+                    Swal.fire({
+                        icon: 'error',
+                        title: 'Lỗi',
+                        text: 'Vui lòng nhập tài khoản đăng nhập!'
+                    });
+                }
+            });
+
+            // Ngăn không cho người dùng tắt modal bằng cách nhấn bên ngoài
+            $(".modal").click(function(event) {
+                event.stopPropagation();
+            });
+
+            $(".modal-content").click(function(event) {
+                event.stopPropagation();
+            });
+
+            $("body").click(function(event) {
+                if ($("#myModal").is(":visible")) {
+                    Swal.fire({
+                        icon: 'error',
+                        title: 'Lỗi',
+                        text: 'Vui lòng nhập tài khoản đăng nhập!'
+                    });
+                }
+            });
+        });
+    </script>
 </body>
 </html>
-
-
