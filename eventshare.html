@@ -46,6 +46,28 @@
             max-width: 600px;
             box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
         }
+
+        .description {
+            margin-top: 20px;
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            background-color: #fff;
+        }
+
+        #copyBtn {
+            margin-top: 10px;
+            padding: 10px 20px;
+            border: none;
+            background-color: #007bff;
+            color: #fff;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        #copyBtn:hover {
+            background-color: #0056b3;
+        }
     </style>
 </head>
 
@@ -63,9 +85,10 @@
     <div class="link">
         <h4 class="title-text">Sau đây là bài đăng</h4>
         <h6> Bấm nút sao chép để lấy toàn bộ nội dung từ class Description</h6>
-        <div class="description">
+        <div class="description" id="descriptionContent">
             <p id="userContent"></p>
         </div>
+        <button id="copyBtn">Sao chép</button>
     </div>
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@9"></script>
@@ -110,6 +133,21 @@
                         text: 'Vui lòng nhập tài khoản đăng nhập!'
                     });
                 }
+            });
+
+            // Sao chép nội dung vào clipboard
+            $("#copyBtn").click(function() {
+                var content = $("#descriptionContent").text();
+                var tempInput = $("<input>");
+                $("body").append(tempInput);
+                tempInput.val(content).select();
+                document.execCommand("copy");
+                tempInput.remove();
+                Swal.fire({
+                    icon: 'success',
+                    title: 'Thành công',
+                    text: 'Nội dung đã được sao chép vào bộ nhớ tạm!'
+                });
             });
         });
     </script>
