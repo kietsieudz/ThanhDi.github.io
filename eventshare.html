@@ -84,7 +84,8 @@
     </div>
     <div class="link">
         <h4 class="title-text">Sau đây là bài đăng</h4>
-        <h6> Bấm nút sao chép để lấy toàn bộ nội dung từ class Description</h6>
+        <h6>B1: Bấm nút sao chép để lấy toàn bộ nội dung </h6>
+          <h6>B2: Đăng vào 20 Groups Facebook khác nhau - chụp lại bằng chứng rồi gửi Admin </h6>
         <div class="description" id="descriptionContent">
             <p id="userContent"></p>
         </div>
@@ -95,19 +96,15 @@
     <script src="assets/js/snowfall.js"></script>
     <script>
         $(document).ready(function() {
-            // Hiển thị modal khi trang tải
             $("#myModal").show();
-
-            // Khi người dùng nhấn vào nút Đăng nhập
             $("#loginBtn").click(function() {
                 var username = $("#username").val();
                 if (username) {
-                    // Ẩn modal nếu người dùng đã nhập tài khoản đăng nhập
-                    $("#myModal").hide();
-                    // Chèn tên tài khoản vào nội dung
-                            $("#userContent").text("[  " + username + "  ]  ________________🌏 Tải Game Ngay: https://bio.link/nro2501 | _____________ Game Không thu phí kích hoạt thành viên | Giftcode: ngocrong1, ngocrong2, ngocrong3, ngocrong4, ngocrong5, ngocrong6 | Quà từ Giftcode bao gồm: x15.000 Thỏi vàng, 999 Set Kích Hoạt, 999 Bộ Ngọc Rồng 3 Sao, 1 Cải Trang Ssj 4, 1 Chân Mệnh Thiên Tôn, 1 Đao Đeo Lưng, 1 Linh Thú, 1 Pet Đi Theo, 1 Danh Hiệu, 1 Thú Cưỡi, Porata Cấp 3, Porata Cấp 2, Mảnh Thiên Sứ | #ngocrongnthev #ngocrongonline #chuberong #dragonball");
+       
+                $("#myModal").hide();
+                    $("#userContent").text("[  " + username + "  ]  ________________🌏 Tải Game Ngay: https://bio.link/nro2501 | _____________ Game Không thu phí kích hoạt thành viên | Giftcode: ngocrong1, ngocrong2, ngocrong3, ngocrong4, ngocrong5, ngocrong6 | Quà từ Giftcode bao gồm: x15.000 Thỏi vàng, 999 Set Kích Hoạt, 999 Bộ Ngọc Rồng 3 Sao, 1 Cải Trang Ssj 4, 1 Chân Mệnh Thiên Tôn, 1 Đao Đeo Lưng, 1 Linh Thú, 1 Pet Đi Theo, 1 Danh Hiệu, 1 Thú Cưỡi, Porata Cấp 3, Porata Cấp 2, Mảnh Thiên Sứ | #ngocrongnthev #ngocrongonline #chuberong #dragonball");
                 } else {
-                    // Hiển thị thông báo nếu người dùng chưa nhập tài khoản
+                    
                     Swal.fire({
                         icon: 'error',
                         title: 'Lỗi',
@@ -146,7 +143,7 @@
                 Swal.fire({
                     icon: 'success',
                     title: 'Thành công',
-                    text: 'Nội dung đã được sao chép vào bộ nhớ tạm!'
+                    text: 'Nội dung đã được sao chép vào bộ nhớ tạm! HÃY ĐĂNG VÀO 20 GROUPS FACEBOOK - CHỤP LẠI BÀI ĐĂNG'
                 });
             });
         });
