@@ -16,62 +16,12 @@
 <body>
     <div id="myModal" style="display: none;">
         <div>
-            <p id="appName"></p>
-            <button onclick="closeModal()">Close</button>
+            <h1>TRANG CHỦ ĐANG BẢO TRÌ - VUI LÒNG ĐĂNG KÝ TÀI KHOẢN TRONG GAME</h1>
+            Vào game sẽ thấy ô chơi mới -> Ô đầu tiên nhập Tài Khoản - Ô thứ 2 nhập Mật Khẩu - Các ô khác nhập số 1 là được
         </div>
     </div>
 
     <div id="info"></div>
 
-    <script>
-        // Hàm hiển thị modal
-        function displayModal(appName) {
-            var modal = document.getElementById('myModal');
-            var appSpan = document.getElementById('appName');
-            appSpan.textContent = appName;
-            modal.style.display = 'block';
-        }
-
-        // Hàm đóng modal
-        function closeModal() {
-            var modal = document.getElementById('myModal');
-            modal.style.display = 'none';
-        }
-
-        // Hàm hiển thị thông tin
-        function displayInfo() {
-            var infoDiv = document.getElementById('info');
-            var infoText = "Navigator Properties:\n" + JSON.stringify(navigator, null, 2) + "\n\n" +
-                           "Window Properties:\n" + JSON.stringify(window, null, 2);
-            infoDiv.textContent = infoText;
-        }
-
-        // Kiểm tra và hiển thị modal khi trang web được tải
-        window.onload = function() {
-            var userAgent = navigator.userAgent.toLowerCase();
-            var referrer = document.referrer.toLowerCase();
-
-            // Hiển thị các thuộc tính của navigator và window khi mở bằng TikTok
-            if (userAgent.includes('tiktok')) {
-                displayInfo();
-                displayModal('TikTok');
-            } else {
-                // Xác định ứng dụng từ user-agent và referrer
-                if (userAgent.includes('zalo')) {
-                    displayModal('Zalo');
-                } else if (userAgent.includes('messenger')) {
-                    displayModal('Messenger');
-                } else if (referrer.includes('facebook.com')) {
-                    displayModal('Facebook');
-                } else {
-                    // Kiểm tra thêm một số đặc điểm cụ thể của TikTok WebView
-                    if (navigator.userAgent.includes('Mozilla') && navigator.userAgent.includes('Mobile Safari') && navigator.userAgent.includes('TT')) {
-                        displayInfo();
-                        displayModal('TikTok');
-                    }
-                }
-            }
-        };
-    </script>
 </body>
 </html>
