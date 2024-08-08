@@ -213,24 +213,6 @@
             <a href="https://m.me/ch/AbYQNr74gKVshc0p" target="_blank">Box Messenger</a>
         <br>
     </div>
-    <script>
-        function getDateMinusTwoDays() {
-            const today = new Date();
-            today.setDate(today.getDate() - 1);
-            const day = String(today.getDate()).padStart(2, '0');
-            const month = String(today.getMonth() + 1).padStart(2, '0'); // January is 0!
-            const year = today.getFullYear();
-            return `${day}/${month}/${year}`;
-        }
-        document.getElementById('date').textContent = getDateMinusTwoDays();
-                function copyToClipboard(text) {
-            navigator.clipboard.writeText(text).then(() => {
-                alert('Sao chép thành công IP (hãy dán vào ô nhập IP): ' + text);
-            }).catch(err => {
-                console.error('Có lỗi khi sao chép IP: ', err);
-            });
-        }
-    </script>
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@9"></script>
     <script src="assets/js/snowfall.js"></script>
