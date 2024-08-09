@@ -56,18 +56,29 @@
             white-space: pre-wrap; /* Preserve whitespace and line breaks */
         }
        
-        #copyBtn {
+        .btn {
             margin-top: 10px;
             padding: 10px 20px;
             border: none;
-            background-color: #007bff;
-            color: #fff;
             border-radius: 5px;
+            color: #fff;
             cursor: pointer;
+        }
+
+        #copyBtn {
+            background-color: #007bff;
         }
 
         #copyBtn:hover {
             background-color: #0056b3;
+        }
+
+        #downloadBtn {
+            background-color: #28a745;
+        }
+
+        #downloadBtn:hover {
+            background-color: #218838;
         }
     </style>
 </head>
@@ -87,9 +98,9 @@
   
     <div class="description" id="descriptionContent" style="display:none;"></div>
     
-    <button id="copyBtn" style="display:none;">Sao chép</button>
+    <button id="copyBtn" class="btn" style="display:none;">Sao chép</button>
     <a href="https://drive.google.com/file/d/1sJJBLj8oU3z5ZjqBMXsh5tzC-lI9doo9/view?usp=drivesdk" download="example.jpg">
-        <button>Tải ảnh</button>
+        <button id="downloadBtn" class="btn">Tải ảnh</button>
     </a>
 
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
