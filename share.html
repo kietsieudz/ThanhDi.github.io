@@ -53,6 +53,7 @@
             border: 1px solid #ccc;
             border-radius: 5px;
             background-color: #fff;
+            white-space: pre-wrap; /* Preserve whitespace and line breaks */
         }
        
         #copyBtn {
@@ -128,7 +129,7 @@
 👉Cộng Đồng: https://zalo.me/g/ammcap225
 👉Cộng Đồng: https://zalo.me/g/csdgwx649
 #ngocrongnthev #ngocrongonline`;
-
+                
                 $("#descriptionContent").text(content);
                 $("#descriptionContent").show();
                 $("#copyBtn").show();
@@ -143,11 +144,11 @@
 
         $("#copyBtn").click(function() {
             var content = $("#descriptionContent").text();
-            var tempInput = $("<input>");
-            $("body").append(tempInput);
-            tempInput.val(content).select();
+            var tempTextArea = $("<textarea>");
+            $("body").append(tempTextArea);
+            tempTextArea.val(content).select();
             document.execCommand("copy");
-            tempInput.remove();
+            tempTextArea.remove();
             Swal.fire({
                 icon: 'success',
                 title: 'Thành công',
