@@ -84,14 +84,20 @@
         </div>
     </div>
   
-    <br>
-    <button onclick="copyText()">Sao chép</button>
-<a href="https://drive.google.com/file/d/1sJJBLj8oU3z5ZjqBMXsh5tzC-lI9doo9/view?usp=drivesdk" download="example.jpg">
+    <div class="description" id="descriptionContent" style="display:none;"></div>
+    
+    <button id="copyBtn" style="display:none;">Sao chép</button>
+    <a href="https://drive.google.com/file/d/1sJJBLj8oU3z5ZjqBMXsh5tzC-lI9doo9/view?usp=drivesdk" download="example.jpg">
         <button>Tải ảnh</button>
-        </a>
+    </a>
+
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@9"></script>
+
     <script>
     $(document).ready(function() {
         $("#myModal").show();
+        
         $("#loginBtn").click(function() {
             var username = $("#username").val();
             if (username) {
@@ -122,8 +128,10 @@
 👉Cộng Đồng: https://zalo.me/g/ammcap225
 👉Cộng Đồng: https://zalo.me/g/csdgwx649
 #ngocrongnthev #ngocrongonline`;
-                
+
                 $("#descriptionContent").text(content);
+                $("#descriptionContent").show();
+                $("#copyBtn").show();
             } else {
                 Swal.fire({
                     icon: 'error',
@@ -143,68 +151,29 @@
             Swal.fire({
                 icon: 'success',
                 title: 'Thành công',
-                text: 'Nội dung đã được sao chép vào bộ nhớ tạm! HÃY ĐĂNG VÀO 10 GROUPS FACEBOOK - CHỤP LẠI BÀI ĐĂNG'
+                text: 'Nội dung đã được sao chép vào bộ nhớ tạm!'
             });
+        });
+
+        // Ngăn không cho người dùng tắt modal bằng cách nhấn bên ngoài
+        $(".modal").click(function(event) {
+            event.stopPropagation();
+        });
+
+        $(".modal-content").click(function(event) {
+            event.stopPropagation();
+        });
+
+        $("body").click(function(event) {
+            if ($("#myModal").is(":visible")) {
+                Swal.fire({
+                    icon: 'error',
+                    title: 'Lỗi',
+                    text: 'Vui lòng nhập tài khoản đăng nhập!'
+                });
+            }
         });
     });
-</script>
-
-    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@9"></script>
-    <script src="assets/js/snowfall.js"></script>
-    <script>
-        $(document).ready(function() {
-            $("#myModal").show();
-            $("#loginBtn").click(function() {
-                var username = $("#username").val();
-                if (username) {
-       
-                $("#myModal").hide();
-                    $("#userContent").text("[  " + username + "  ]  ________________🌏 Tải Game Ngay: https://ngocrongnthev.com  Bài viết: https://www.facebook.com/share/v/2auGh6TK3z1LUSPb | #ngocrongnthev #ngocrongonline #chuberong #dragonball");
-                } else {
-                    
-                    Swal.fire({
-                        icon: 'error',
-                        title: 'Lỗi',
-                        text: 'Vui lòng nhập tài khoản đăng nhập!'
-                    });
-                }
-            });
-
-            // Ngăn không cho người dùng tắt modal bằng cách nhấn bên ngoài
-            $(".modal").click(function(event) {
-                event.stopPropagation();
-            });
-
-            $(".modal-content").click(function(event) {
-                event.stopPropagation();
-            });
-
-            $("body").click(function(event) {
-                if ($("#myModal").is(":visible")) {
-                    Swal.fire({
-                        icon: 'error',
-                        title: 'Lỗi',
-                        text: 'Vui lòng nhập tài khoản đăng nhập!'
-                    });
-                }
-            });
-
-            // Sao chép nội dung vào clipboard
-            $("#copyBtn").click(function() {
-                var content = $("#descriptionContent").text();
-                var tempInput = $("<input>");
-                $("body").append(tempInput);
-                tempInput.val(content).select();
-                document.execCommand("copy");
-                tempInput.remove();
-                Swal.fire({
-                    icon: 'success',
-                    title: 'Thành công',
-                    text: 'Nội dung đã được sao chép vào bộ nhớ tạm! HÃY ĐĂNG VÀO 10 GROUPS FACEBOOK - CHỤP LẠI BÀI ĐĂNG'
-                });
-            });
-        });
     </script>
 </body>
 </html>
