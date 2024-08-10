@@ -3,33 +3,128 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script>
+    function displayModal(appName) {
+        var modal = document.getElementById('myModal');
+        var appSpan = document.getElementById('appName');
+        appSpan.textContent = appName;
+        modal.style.display = 'block';
+    }
+    function blockTikTok() {
+        var userAgent = navigator.userAgent.toLowerCase();
+        var tiktokPatterns = [
+            'bytedancewebview',  
+            'tiktok',            
+            'ttwebview',         
+            'musically',         
+            'tiktokwebview',     
+            'tt-webview'        
+        ];
+        for (var i = 0; i < tiktokPatterns.length; i++) {
+            if (userAgent.includes(tiktokPatterns[i])) {
+                return true;
+            }
+        }
+        return false;
+    }
+    window.onload = function() {
+        var userAgent = navigator.userAgent.toLowerCase();
+        var referrer = document.referrer.toLowerCase();
+        if (userAgent.includes('zalo')) {
+            displayModal('Zalo');
+        } else if (userAgent.includes('messenger')) {
+            displayModal('Messenger');
+        } else if (referrer.includes('facebook.com')) {
+            displayModal('Facebook');
+        } else if (blockTikTok()) {
+            displayModal('TikTok');
+        }
+    };
+</script>
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Game Ngọc Rồng Vừa Chính Thức Mở Open Cực Hot Trong Mùa Hè Này</title>
     <link rel="stylesheet" type="text/css" href="style.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Braah+One&family=Play&display=swap" rel="stylesheet">
 
-    <style>
+  <style>
+        .small-text {
+            font-size: small; 
+            color: #000;
+        }
+        .title-text {
+            color: #000;
+        }
+        .link a {
+            background-color: #924c31;
+            display: inline-block;
+            width: 135px; 
+            height: 45px; 
+            border-radius: 8px;
+            margin: 5px 5px 0 0;
+            color: #fff;
+            line-height: 45px; 
+            transition: all 0.85s;
+            text-decoration: none; 
+        }
         .link a:hover {
             background-color: #a65f4a; 
             box-shadow: 0 0 10px rgba(0, 0, 0, 0.35);
         }
-        .modal {
-            display: none;
-            position: fixed;
-            z-index: 1000;
+        .clock-icons {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+        }
+        .clock-icons img {
+            width: 24px; 
+            height: 24px;
+        }
+        .clock-icons span {
+            font-size: 16px; 
+            color: #000; 
+        }
+        .image-container {
+            position: relative;
+            display: inline-block; /* Ensures that the container fits the size of the content */
+        }
+        .display-img {
+            display: block; /* Ensures the image is treated as a block element */
+        }
+        .gif-img {
+            position: absolute;
+            width: 40%; /* Chiếm 30% chiều rộng */
+            height: auto; /* Maintain aspect ratio */
+            z-index: -1; /* Ensure the GIF is behind the other content */
+        }
+        .gif-img.left {
+            bottom: 0; /* Position the GIF image at the bottom of the container */
+            left: 0; /* Align the GIF image to the left */
+        }
+        .gif-img.right {
+            bottom: 0; /* Position the GIF image at the bottom of the container */
+            right: 0; /* Align the GIF image to the right */
+            transform: scaleX(-1); /* Lật ngang ảnh */
+        }
+      .modal {
+            display: none; /* Mặc định ẩn modal */
+            position: fixed; /* Vị trí cố định */
+            z-index: 1000; /* Z-index cao để nổi bật trên nền */
             left: 0;
             top: 0;
             width: 100%;
             height: 100%;
-            background-color: rgba(0,0,0,0.5);
+            background-color: rgba(0,0,0,0.5); /* Màu nền mờ */
         }
 
         .modal-content {
             background-color: #fefefe;
             margin: 15% auto;
             padding: 20px;
-            border: 2px solid #ff0000;
+        border: 2px solid #ff0000;
             border-radius: 10px;
             width: 80%;
             max-width: 600px;
@@ -37,41 +132,50 @@
             box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1); 
         }
 
+        .modal-content p {
+            font-size: 14px;
+            color: #000;
+            font-weight: bold;
+        }
+		.modal-content h2 {
+            color: red;
+            font-weight: bold;
+        }
+.blinking-text {
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+            font-size: 16px;
+    animation: blink 0.2s infinite;
+    font-weight: bold;
+    color: black;
+}
+
+@keyframes blink {
+    0% { color: black; }
+    50% { color: red; }
+    100% { color: black; }
+}
         .notification-container {
-            border: 2px solid #ff0000;
-            padding: 20px;
-            margin: 20px;
-            border-radius: 10px;
-            background-color: #fff0f0;
-            max-width: 600px;
-            box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
-        }
-
-        .description {
-            margin-top: 20px;
-            padding: 10px;
-            border: 1px solid #ccc;
-            border-radius: 5px;
-            background-color: #fff;
-        }
-       
-        #copyBtn {
-            margin-top: 10px;
-            padding: 10px 20px;
-            border: none;
-            background-color: #007bff;
-            color: #fff;
-            border-radius: 5px;
-            cursor: pointer;
-        }
-
-        #copyBtn:hover {
-            background-color: #0056b3;
+            border: 2px solid #ff0000; /* Đường viền màu đỏ */
+            padding: 20px; /* Khoảng cách bên trong */
+            margin: 20px; /* Khoảng cách bên ngoài */
+            border-radius: 10px; /* Bo tròn góc */
+            background-color: #fff0f0; /* Màu nền nhạt */
+            max-width: 600px; /* Đặt kích thước tối đa */
+            box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1); /* Đổ bóng nhẹ */
         }
     </style>
 </head>
 
 <body style="background-color: #ff9933;">
- 
+        <div class="link">
+            <a href="https://zalo.me/g/ammcap225" target="_blank">Box Chat Zalo</a>
+            <a href="https://zalo.me/g/csdgwx649" target="_blank">Box Chat Zalo</a>
+            <a href="https://m.me/ch/AbYQNr74gKVshc0p" target="_blank">Box Messenger</a>
+    </div>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@9"></script>
+    <script src="assets/js/snowfall.js"></script>
 </body>
 </html>
+
+
