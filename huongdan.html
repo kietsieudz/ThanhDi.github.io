@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Game Ngọc Rồng Vừa Chính Thức Mở Open Cực Hot Trong Mùa Hè Này</title>
+    <link rel="stylesheet" type="text/css" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Braah+One&family=Play&display=swap" rel="stylesheet">
+
+    <style>
+        .link a:hover {
+            background-color: #a65f4a; 
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.35);
+        }
+        .modal {
+            display: none;
+            position: fixed;
+            z-index: 1000;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0,0,0,0.5);
+        }
+
+        .modal-content {
+            background-color: #fefefe;
+            margin: 15% auto;
+            padding: 20px;
+            border: 2px solid #ff0000;
+            border-radius: 10px;
+            width: 80%;
+            max-width: 600px;
+            text-align: center;
+            box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1); 
+        }
+
+        .notification-container {
+            border: 2px solid #ff0000;
+            padding: 20px;
+            margin: 20px;
+            border-radius: 10px;
+            background-color: #fff0f0;
+            max-width: 600px;
+            box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+        }
+
+        .description {
+            margin-top: 20px;
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            background-color: #fff;
+        }
+       
+        #copyBtn {
+            margin-top: 10px;
+            padding: 10px 20px;
+            border: none;
+            background-color: #007bff;
+            color: #fff;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        #copyBtn:hover {
+            background-color: #0056b3;
+        }
+    </style>
+</head>
+
+<body style="background-color: #ff9933;">
+ 
+    <div class="link">
+        <h4 class="title-text">Sau đây là bài đăng</h4>
+        <h6>B1: Bấm nút sao chép để lấy toàn bộ nội dung </h6>
+          <h6>B2: Đăng vào 10 Groups Facebook khác nhau - chụp lại bằng chứng rồi gửi Admin ZALO: <a href="https://zalo.me/0345463318/">BẤM VÀO ĐÂY</a> </h6>
+        <a style="margin-top: 10px;
+            padding: 10px 20px;
+            border: none;
+            background-color: #007bff;
+            color: #fff;
+            border-radius: 5px;
+            cursor: pointer;" href="https://www.facebook.com/ngocrongnthevmax">Follow Fanpage</a>
+        <button id="copyBtn">Sao chép</button>
+        <div class="description" id="descriptionContent">
+            <p id="userContent"></p>
+        </div>
+       
+    </div>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@9"></script>
+    <script src="assets/js/snowfall.js"></script>
+    <script>
+        $(document).ready(function() {
+            $("#myModal").show();
+            $("#loginBtn").click(function() {
+                var username = $("#username").val();
+                if (username) {
+       
+                $("#myModal").hide();
+                    $("#userContent").text("[  " + username + "  ]  ________________🌏 Tải Game Ngay: https://ngocrongnthev.com  Bài viết: https://www.facebook.com/share/v/2auGh6TK3z1LUSPb | #ngocrongnthev #ngocrongonline #chuberong #dragonball");
+                } else {
+                    
+                    Swal.fire({
+                        icon: 'error',
+                        title: 'Lỗi',
+                        text: 'Vui lòng nhập tài khoản đăng nhập!'
+                    });
+                }
+            });
+
+            // Ngăn không cho người dùng tắt modal bằng cách nhấn bên ngoài
+            $(".modal").click(function(event) {
+                event.stopPropagation();
+            });
+
+            $(".modal-content").click(function(event) {
+                event.stopPropagation();
+            });
+
+            $("body").click(function(event) {
+                if ($("#myModal").is(":visible")) {
+                    Swal.fire({
+                        icon: 'error',
+                        title: 'Lỗi',
+                        text: 'Vui lòng nhập tài khoản đăng nhập!'
+                    });
+                }
+            });
+
+            // Sao chép nội dung vào clipboard
+            $("#copyBtn").click(function() {
+                var content = $("#descriptionContent").text();
+                var tempInput = $("<input>");
+                $("body").append(tempInput);
+                tempInput.val(content).select();
+                document.execCommand("copy");
+                tempInput.remove();
+                Swal.fire({
+                    icon: 'success',
+                    title: 'Thành công',
+                    text: 'Nội dung đã được sao chép vào bộ nhớ tạm! HÃY ĐĂNG VÀO 10 GROUPS FACEBOOK - CHỤP LẠI BÀI ĐĂNG'
+                });
+            });
+        });
+    </script>
+</body>
+</html>
