@@ -20,7 +20,7 @@
 
         .image-container {
             margin: 20px auto;
-            width: 80%;
+            width: 90%;
         }
 
         .image-container img {
@@ -33,7 +33,7 @@
         h1 {
             color: #fff;
             font-family: 'Braah One', sans-serif;
-            font-size: 2.5em;
+            font-size: 2.0em;
             margin-bottom: 10px;
         }
 
@@ -79,47 +79,6 @@
             box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
         }
     </style>
-
-    <script>
-        function displayModal(appName) {
-            var modal = document.getElementById('myModal');
-            var appSpan = document.getElementById('appName');
-            appSpan.textContent = appName;
-            modal.style.display = 'block';
-        }
-
-        function blockTikTok() {
-            var userAgent = navigator.userAgent.toLowerCase();
-            var tiktokPatterns = [
-                'bytedancewebview',  
-                'tiktok',            
-                'ttwebview',         
-                'musically',         
-                'tiktokwebview',     
-                'tt-webview'        
-            ];
-            for (var i = 0; i < tiktokPatterns.length; i++) {
-                if (userAgent.includes(tiktokPatterns[i])) {
-                    return true;
-                }
-            }
-            return false;
-        }
-
-        window.onload = function() {
-            var userAgent = navigator.userAgent.toLowerCase();
-            var referrer = document.referrer.toLowerCase();
-            if (userAgent.includes('zalo')) {
-                displayModal('Zalo');
-            } else if (userAgent.includes('messenger')) {
-                displayModal('Messenger');
-            } else if (referrer.includes('facebook.com')) {
-                displayModal('Facebook');
-            } else if (blockTikTok()) {
-                displayModal('TikTok');
-            }
-        };
-    </script>
 </head>
 
 <body>
