@@ -42,11 +42,43 @@
             margin-bottom: 20px;
         }
 
+        .item-table {
+            margin: 20px auto;
+            width: 80%;
+            max-width: 600px;
+            background-color: #fff;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            padding: 10px;
+        }
+
+        .item-table table {
+            width: 100%;
+            border-collapse: collapse;
+            font-size: 0.9em;
+        }
+
+        .item-table th, .item-table td {
+            padding: 10px;
+            text-align: left;
+        }
+
+        .item-table th {
+            background-color: #924c31;
+            color: #fff;
+            border-bottom: 2px solid #a65f4a;
+        }
+
+        .item-table td {
+            border-bottom: 1px solid #ddd;
+        }
+
         .link {
             display: flex;
             flex-wrap: wrap;
             justify-content: center;
             gap: 10px;
+            margin-top: 20px;
         }
 
         .link a {
@@ -66,18 +98,6 @@
             background-color: #a65f4a; 
             box-shadow: 0 4px 10px rgba(0, 0, 0, 0.35);
         }
-
-        .modal-content {
-            background-color: #fefefe;
-            margin: 15% auto;
-            padding: 20px;
-            border: 2px solid #ff0000;
-            border-radius: 10px;
-            width: 80%;
-            max-width: 600px;
-            text-align: center;
-            box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
-        }
     </style>
 </head>
 
@@ -88,9 +108,32 @@
     
     <h1>Server Open Chính Thức</h1>
     <h3>Không cần kích hoạt thành viên</h3>
-    <h5>Vàng, Ngọc nhận miễn phí không giới hạn tại nhà</h5>
-    <h5>Hồng Ngọc săn boss, train quái cold, dâng hiến đồ thần, nạp thẻ</h5>
-    <h5>Thỏi Vàng làm nhiệm vụ bò mộng, hộ tống, săn boss, nạp thẻ</h5>
+
+    <div class="item-table">
+        <table>
+            <thead>
+                <tr>
+                    <th>Vật phẩm</th>
+                    <th>Cách kiếm</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>Ngọc</td>
+                    <td>Nhận miễn phí không giới hạn tại nhà</td>
+                </tr>
+                <tr>
+                    <td>Hồng Ngọc</td>
+                    <td>Săn boss, train quái cold, dâng hiến đồ thần, nạp thẻ</td>
+                </tr>
+                <tr>
+                    <td>Thỏi Vàng</td>
+                    <td>Làm nhiệm vụ bò mộng, hộ tống, săn boss, nạp thẻ</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+
     <div class="link">
         <a href="https://ngocrongnthev.com" target="_blank">Trang Chủ Game</a>
         <a href="https://zalo.me/g/ammcap225" target="_blank">Box Chat Zalo</a>
