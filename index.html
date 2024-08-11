@@ -3,70 +3,70 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <script>
-    function displayModal(appName) {
-        var modal = document.getElementById('myModal');
-        var appSpan = document.getElementById('appName');
-        appSpan.textContent = appName;
-        modal.style.display = 'block';
-    }
-    function blockTikTok() {
-        var userAgent = navigator.userAgent.toLowerCase();
-        var tiktokPatterns = [
-            'bytedancewebview',  
-            'tiktok',            
-            'ttwebview',         
-            'musically',         
-            'tiktokwebview',     
-            'tt-webview'        
-        ];
-        for (var i = 0; i < tiktokPatterns.length; i++) {
-            if (userAgent.includes(tiktokPatterns[i])) {
-                return true;
-            }
-        }
-        return false;
-    }
-    window.onload = function() {
-        var userAgent = navigator.userAgent.toLowerCase();
-        var referrer = document.referrer.toLowerCase();
-        if (userAgent.includes('zalo')) {
-            displayModal('Zalo');
-        } else if (userAgent.includes('messenger')) {
-            displayModal('Messenger');
-        } else if (referrer.includes('facebook.com')) {
-            displayModal('Facebook');
-        } else if (blockTikTok()) {
-            displayModal('TikTok');
-        }
-    };
-</script>
-
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Game Ngọc Rồng Vừa Chính Thức Mở Open Cực Hot Trong Mùa Hè Này</title>
     <link rel="stylesheet" type="text/css" href="style.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Braah+One&family=Play&display=swap" rel="stylesheet">
 
-  <style>
+    <style>
+        body {
+            background-color: #ffaf4c;
+            font-family: 'Play', sans-serif;
+            margin: 0;
+            padding: 0;
+            text-align: center;
+        }
+
+        .image-container {
+            margin: 20px auto;
+            width: 80%;
+        }
+
+        .image-container img {
+            width: 100%;
+            height: auto;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        }
+
+        h1 {
+            color: #fff;
+            font-family: 'Braah One', sans-serif;
+            font-size: 2.5em;
+            margin-bottom: 10px;
+        }
+
+        h3 {
+            color: #fff;
+            margin-bottom: 20px;
+        }
+
+        .link {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 10px;
+        }
+
         .link a {
             background-color: #924c31;
             display: inline-block;
-            width: 135px; 
-            height: 45px; 
+            width: 140px; 
+            height: 50px; 
             border-radius: 8px;
-            margin: 5px 5px 0 0;
             color: #fff;
-            line-height: 45px; 
-            transition: all 0.85s;
-            text-decoration: none; 
+            line-height: 50px;
+            text-align: center;
+            text-decoration: none;
+            transition: all 0.3s ease;
         }
+
         .link a:hover {
             background-color: #a65f4a; 
-            box-shadow: 0 0 10px rgba(0, 0, 0, 0.35);
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.35);
         }
-      
+
         .modal-content {
             background-color: #fefefe;
             margin: 15% auto;
@@ -76,30 +76,69 @@
             width: 80%;
             max-width: 600px;
             text-align: center;
-            box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1); 
+            box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
         }
     </style>
+
+    <script>
+        function displayModal(appName) {
+            var modal = document.getElementById('myModal');
+            var appSpan = document.getElementById('appName');
+            appSpan.textContent = appName;
+            modal.style.display = 'block';
+        }
+
+        function blockTikTok() {
+            var userAgent = navigator.userAgent.toLowerCase();
+            var tiktokPatterns = [
+                'bytedancewebview',  
+                'tiktok',            
+                'ttwebview',         
+                'musically',         
+                'tiktokwebview',     
+                'tt-webview'        
+            ];
+            for (var i = 0; i < tiktokPatterns.length; i++) {
+                if (userAgent.includes(tiktokPatterns[i])) {
+                    return true;
+                }
+            }
+            return false;
+        }
+
+        window.onload = function() {
+            var userAgent = navigator.userAgent.toLowerCase();
+            var referrer = document.referrer.toLowerCase();
+            if (userAgent.includes('zalo')) {
+                displayModal('Zalo');
+            } else if (userAgent.includes('messenger')) {
+                displayModal('Messenger');
+            } else if (referrer.includes('facebook.com')) {
+                displayModal('Facebook');
+            } else if (blockTikTok()) {
+                displayModal('TikTok');
+            }
+        };
+    </script>
 </head>
 
-<body style="background-color: #ffaf4c;">
+<body>
     <div class="image-container">
-        <img class="display-img" src="https://i.imgur.com/r0dTPVm.png" alt="Ảnh đại diện">
+        <img src="https://i.imgur.com/r0dTPVm.png" alt="Ảnh đại diện">
     </div>
-        <br>
-            <h1 style="color: #fff">Server Open Chính Thức</h1>
-            <h3 style="color: #fff">Không cần kích hoạt thành viên</h3>
-        <br>
-        <div class="link">
-             <a href="https://ngocrongnthev.com" target="_blank">Trang Chủ Game</a>
-            <a href="https://zalo.me/g/ammcap225" target="_blank">Box Chat Zalo</a>
-            <a href="https://zalo.me/g/uelhmv606" target="_blank">Box Chat Zalo</a>
-            <a href="https://m.me/ch/AbYQNr74gKVshc0p" target="_blank">Box Messenger</a>
-        <br>
+    
+    <h1>Server Open Chính Thức</h1>
+    <h3>Không cần kích hoạt thành viên</h3>
+    
+    <div class="link">
+        <a href="https://ngocrongnthev.com" target="_blank">Trang Chủ Game</a>
+        <a href="https://zalo.me/g/ammcap225" target="_blank">Box Chat Zalo</a>
+        <a href="https://zalo.me/g/uelhmv606" target="_blank">Box Chat Zalo</a>
+        <a href="https://m.me/ch/AbYQNr74gKVshc0p" target="_blank">Box Messenger</a>
     </div>
+
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@9"></script>
     <script src="assets/js/snowfall.js"></script>
 </body>
 </html>
-
-
