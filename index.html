@@ -50,13 +50,6 @@
     <link href="https://fonts.googleapis.com/css2?family=Braah+One&family=Play&display=swap" rel="stylesheet">
 
   <style>
-        .small-text {
-            font-size: small; 
-            color: #000;
-        }
-        .title-text {
-            color: #000;
-        }
         .link a {
             background-color: #924c31;
             display: inline-block;
@@ -73,53 +66,7 @@
             background-color: #a65f4a; 
             box-shadow: 0 0 10px rgba(0, 0, 0, 0.35);
         }
-        .clock-icons {
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            gap: 10px;
-        }
-        .clock-icons img {
-            width: 100%; 
-            height: auto;
-        }
-        .clock-icons span {
-            font-size: 16px; 
-            color: #000; 
-        }
-        .image-container {
-            position: relative;
-            display: inline-block; /* Ensures that the container fits the size of the content */
-        }
-        .display-img {
-            display: block; /* Ensures the image is treated as a block element */
-        }
-        .gif-img {
-            position: absolute;
-            width: 40%; /* Chiếm 30% chiều rộng */
-            height: auto; /* Maintain aspect ratio */
-            z-index: -1; /* Ensure the GIF is behind the other content */
-        }
-        .gif-img.left {
-            bottom: 0; /* Position the GIF image at the bottom of the container */
-            left: 0; /* Align the GIF image to the left */
-        }
-        .gif-img.right {
-            bottom: 0; /* Position the GIF image at the bottom of the container */
-            right: 0; /* Align the GIF image to the right */
-            transform: scaleX(-1); /* Lật ngang ảnh */
-        }
-      .modal {
-            display: none; /* Mặc định ẩn modal */
-            position: fixed; /* Vị trí cố định */
-            z-index: 1000; /* Z-index cao để nổi bật trên nền */
-            left: 0;
-            top: 0;
-            width: 100%;
-            height: 100%;
-            background-color: rgba(0,0,0,0.5); /* Màu nền mờ */
-        }
-
+      
         .modal-content {
             background-color: #fefefe;
             margin: 15% auto;
@@ -131,60 +78,16 @@
             text-align: center;
             box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1); 
         }
-
-        .modal-content p {
-            font-size: 14px;
-            color: #000;
-            font-weight: bold;
-        }
-		.modal-content h2 {
-            color: red;
-            font-weight: bold;
-        }
-.blinking-text {
-            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
-            font-size: 16px;
-    animation: blink 0.2s infinite;
-    font-weight: bold;
-    color: black;
-}
-
-@keyframes blink {
-    0% { color: black; }
-    50% { color: red; }
-    100% { color: black; }
-}
-        .notification-container {
-            border: 2px solid #ff0000; /* Đường viền màu đỏ */
-            padding: 20px; /* Khoảng cách bên trong */
-            margin: 20px; /* Khoảng cách bên ngoài */
-            border-radius: 10px; /* Bo tròn góc */
-            background-color: #fff0f0; /* Màu nền nhạt */
-            max-width: 600px; /* Đặt kích thước tối đa */
-            box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1); /* Đổ bóng nhẹ */
-        }
     </style>
 </head>
 
-<body style="background-color: #ff9933;">
-<div id="myModal" class="modal">
-    <div class="modal-content">
-    <div class="notification-container">
-        <h2>Thông Báo</h2>
-        <p>Bạn đang truy cập website bằng <span id="appName" style="font-weight: bold; color: red;"></span></p>
-        <p>Hãy bấm vào dấu 3 chấm trên góc màn hình của bạn và chọn mở bằng <span style="font-weight: bold; color: red;">Trình duyệt</span>, <span style="font-weight: bold; color: red;">Chrome</span> hoặc <span style="font-weight: bold; color: red;">Safari</span> để vào Website</p>
-    </div>
-    <h4 class="blinking-text">Không Cần Kích Hoạt Thành Viên</h4>
-    <p class="blinking-text">Hồng ngọc: săn boss, up cold, nạp</p>
-    <p class="blinking-text">Thỏi vàng: bò mộng, hộ tống, nạp</p>
-    <img src="https://i.pinimg.com/originals/f7/63/bf/f763bf4800723a0bd029953a5a2f9c96.gif" alt="Ảnh GIF">
-</div>
-    </div>
+<body style="background-color: #000;">
     <div class="image-container">
         <img class="display-img" src="https://i.imgur.com/r0dTPVm.png" alt="Ảnh đại diện">
     </div>
         <br>
             <h1>Server Open Chính Thức</h1>
+            <h3>Không cần kích hoạt thành viên</h3>
         <br>
         <div class="link">
              <a href="https://ngocrongnthev.com" target="_blank">Trang Chủ Game</a>
