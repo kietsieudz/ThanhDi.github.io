@@ -12,68 +12,23 @@
 
     <style>
         body {
-    font-family: 'Play', sans-serif;
-    margin: 0;
-    padding: 0;
-    text-align: center;
-    background-image: url('https://i.imgur.com/M3MZrbh.png'); /* Thay thế URL này bằng URL của ảnh nền của bạn */
-    background-size: cover;
-    background-position: center;
-}
-
-
-        .image-container img {
-            display: block;
-            margin: 0 auto;
-            width: 100%;
-            height: auto;
-            max-width: 600px;
-        }
-
-        h1 {
-            color: #fff;
-            font-family: 'Braah One', sans-serif;
-            font-size: 1.8em;
-            margin-bottom: 5px;
-        }
-
-        h3 {
-            color: #fff;
-            margin-bottom: 5px;
-        }
-
-        .item-table {
-            margin: 20px auto;
-            width: 80%;
-            max-width: 600px;
-            background-color: #fff;
-            border-radius: 10px;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-            padding: 10px;
-        }
-
-        .item-table table {
-            width: 100%;
-            border-collapse: collapse;
-            font-size: 0.9em;
-        }
-
-        .item-table th, .item-table td {
-            padding: 10px;
-            text-align: left;
-        }
-
-        .item-table th {
-            background-color: #924c31;
-            color: #fff;
-            border-bottom: 2px solid #a65f4a;
-        }
-
-        .item-table td {
-            border-bottom: 1px solid #ddd;
+            font-family: 'Play', sans-serif;
+            margin: 0;
+            padding: 0;
+            text-align: center;
+            background-image: url('https://i.imgur.com/M3MZrbh.png');
+            background-size: cover;
+            background-position: center;
+            height: 100vh; /* Đặt chiều cao bằng 100% chiều cao của khung nhìn */
+            overflow: hidden; /* Khóa cuộn trang */
+            position: relative; /* Đặt để sử dụng vị trí tuyệt đối của nút */
         }
 
         .link {
+            position: absolute;
+            top: 70%; /* Di chuyển nút xuống 70% chiều dọc */
+            left: 50%;
+            transform: translateX(-50%);
             display: flex;
             flex-wrap: wrap;
             justify-content: center;
@@ -84,19 +39,30 @@
         .link a {
             background-color: #924c31;
             display: inline-block;
-            width: 140px; 
-            height: 50px; 
+            width: 140px;
+            height: 50px;
             border-radius: 8px;
             color: #fff;
             line-height: 50px;
             text-align: center;
             text-decoration: none;
             transition: all 0.3s ease;
+            animation: pulse 2s infinite ease-in-out; /* Hiệu ứng phóng to thu nhỏ */
         }
 
         .link a:hover {
-            background-color: #a65f4a; 
+            background-color: #a65f4a;
             box-shadow: 0 4px 10px rgba(0, 0, 0, 0.35);
+        }
+
+        /* Hiệu ứng phóng to thu nhỏ */
+        @keyframes pulse {
+            0%, 100% {
+                transform: scale(1);
+            }
+            50% {
+                transform: scale(1.03); /* Phóng to thêm 3% */
+            }
         }
     </style>
 </head>
